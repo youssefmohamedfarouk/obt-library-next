@@ -1,9 +1,15 @@
 import axios from "axios";
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export default function Bookentry() {
   const [isbn, setISBN] = useState("");
+
+  useEffect(() => {
+    if (isbn.length >= 10) {
+      setTimeout('document.getElementById("book-form").submit()', 1200);
+    }
+  }, [isbn]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,12 +47,7 @@ export default function Bookentry() {
   };
 
   const handleText = (e) => {
-    if (e.target.id == "isbn") {
-      setISBN(e.target.value);
-      if (e.target.value.length >= 10) {
-        setTimeout('document.getElementById("book-form").submit()', 1200);
-      }
-    }
+    setISBN(e.target.value);
   };
 
   return (
