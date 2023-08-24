@@ -40,7 +40,7 @@ export default function Bookentry() {
     // return createdBook;
   };
 
-  const handleText = () => {
+  const handleText = (e) => {
     if (e.target.id == "isbn") {
       setISBN(e.target.value);
       if (e.target.value.length >= 10) {
