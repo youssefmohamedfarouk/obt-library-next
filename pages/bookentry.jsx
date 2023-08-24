@@ -9,7 +9,7 @@ export default function Bookentry() {
     e.preventDefault();
 
     axios
-      .post(`http://localhost:8998/books/${isbn}`)
+      .post(`https://library-backend-vl1m.onrender.com/books/${isbn}`)
       .then((res) => {
         toast("Book added successfully!", {
           position: "bottom-right",
