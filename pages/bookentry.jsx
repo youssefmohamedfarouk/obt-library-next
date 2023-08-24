@@ -23,18 +23,19 @@ export default function Bookentry() {
         });
         console.log(res);
       })
-      .catch((error) =>
-        toast("Error adding book! Please double check the ISBN.", {
-          position: "bottom-right",
-          autoClose: 4000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        })
-      );
+      .catch((error) => {
+        if (error)
+          toast("Error adding book! Please double check the ISBN.", {
+            position: "bottom-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+      });
     setISBN("");
     // return createdBook;
   };
@@ -45,13 +46,13 @@ export default function Bookentry() {
     if (e.target.id == "isbn") {
       setISBN(e.target.value);
       if (e.target.value.length >= 10) {
-        setTimeout('document.getElementById("submit-book").click()', 1500);
+        setTimeout('document.getElementById("book-form").submit()', 1200);
       }
     }
   };
 
   return (
-    <form id="form" onSubmit={handleSubmit} className="w-1/3 m-auto mt-40">
+    <form id="book-form" onSubmit={handleSubmit} className="w-1/3 m-auto mt-40">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
