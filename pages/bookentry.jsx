@@ -52,7 +52,11 @@ export default function Bookentry() {
   };
 
   return (
-    <form id="book-form" onSubmit={handleSubmit} className="w-1/3 m-auto mt-40">
+    <form
+      id="book-form"
+      onSubmit={(e) => handleSubmit(e)}
+      className="w-1/3 m-auto mt-40"
+    >
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
