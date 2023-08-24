@@ -45,7 +45,7 @@ export default function Bookentry() {
     if (e.target.id == "isbn") {
       setISBN(e.target.value);
       if (e.target.value.length >= 10) {
-        setTimeout('document.getElementById("submitButton").click()', 1000);
+        setTimeout('document.getElementById("submit-book").click()', 1500);
       }
     }
   };
@@ -95,7 +95,7 @@ export default function Bookentry() {
           Cancel
         </button>
         <button
-          id="submitButton"
+          id="submit-book"
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
